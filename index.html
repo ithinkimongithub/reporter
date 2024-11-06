@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<!--Author: Thomas Kubler. using examples from w3schools.com-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Reporter</title>
+    <!-- MathJax for equations means the local styles has to be removed. Apache 2.0 license -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<style>
+    table, th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <h1>Reporter</h1>
+    
+    <br>Start typing:
+    <br><input type="text" id="entry1" onchange="Changed(1)" size="100">
+    <br><p id="p1"></p>
+    
+    <div style="font-size:10px;">
+        Author: Thomas Kubler
+    <a href="mailto:thomas.kubler@gmail.com">thomas.kubler@gmail.com</a>
+</body>
+<script>
+    function Changed(which){
+        var which_p = "p"+which;
+        var output = document.getElementById(which_p);
+        output.innerHTML = '';
+        var which_entry = "entry"+which;
+        var input = document.getElementById(which_entry).value;
+        console.log(which,which_p,which_entry,input);
+    }
+</script>
+</html>
