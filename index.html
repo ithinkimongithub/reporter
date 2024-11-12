@@ -18,14 +18,18 @@
     }
 </style>
 <body>
-    <h1>Test Maker</h1>
+    <h1>title</h1>
+    <button type="button" id="coi-1-append" onclick="toggleMode()">Toggle Plan/Progress/Interim/Final Mode</button><a id="current-mode">Interim</a>
     <ul id="thelist">
-        <li id="li-coi-1"><a id="coi-1-title">COI-1: </a><input type="text" size="100" id="coi-1-text">
-            <button type="button" id="coi-1-insert" onclick="clickbutton('insert', 1, event.target.id)">I</button>
-            <button type="button" id="coi-1-remove" onclick="clickbutton('remove', 1, event.target.id)" disabled>-</button>
-            <button type="button" id="coi-1-append" onclick="clickbutton('append', 1, event.target.id)">+</button>
-            <button type="button" id="coi-1-lock" onclick="clickbutton('lock',     1, event.target.id)">Lock</button><br>
-            Result:
+        <li id="coi-1-li">
+            <a id="coi-1-title">COI-1: </a><input type="text" size="100" id="coi-1-text">
+            <button type="button" id="coi-1-insert" onclick="clickbutton(event.target.id)">I</button>
+            <button type="button" id="coi-1-remove" onclick="clickbutton(event.target.id)" disabled>-</button>
+            <button type="button" id="coi-1-append" onclick="clickbutton(event.target.id)">+</button>
+            <button type="button" id="coi-1-addchild" onclick="clickbutton(event.target.id)">+&#8595</button>
+            <button type="button" id="coi-1-lock" onclick="clickbutton(event.target.id)">Lock</button>
+            <button type="button" id="coi-1-show" onclick="clickbutton(event.target.id)">Show/Hide Children</button><br>
+            <a>Result: </a>
                 <select name="result" id="coi-1-result">
                     <option value="None"></option>
                     <option value="Yes">Yes</option>
@@ -34,19 +38,19 @@
                     <option value="Exc">Yes, With Exception</option>
                     <option value="Excs">Yes, With Exceptions</option>
                 </select><br>
-                Discussion:<br><textarea cols = "100" rows = "2" id="coi-1-discussion"></textarea><br>
-            <ul id="ul-coi-1">
-                <li id="li-mose-1-1">
+                <a>Discussion:</a><br><textarea cols = "100" rows = "2" id="coi-1-discussion"></textarea><br>
+            <ul id="coi-1-ul">
+                <li id="mose-1-1-li">
                     <a id="mose-1-1-title">MOE 1-1: </a><input type="text" size="100" id="mose-1-1-text">
-                    <button type="button" id="mose-1-1-swap" onclick="clickbutton('swap',     2, event.target.id)">E/S</button>
-                    <button type="button" id="mose-1-1-insert" onclick="clickbutton('insert', 2, event.target.id)">I</button>
-                    <button type="button" id="mose-1-1-remove" onclick="clickbutton('remove', 2, event.target.id)" disabled>-</button>
-                    <button type="button" id="mose-1-1-append" onclick="clickbutton('append', 2, event.target.id)">+</button>
-                    <button type="button" id="mose-1-1-lock" onclick="clickbutton('lock',     2, event.target.id)">Lock</button><br>
-                    Data Collection Criteria: <input type="text" size="100" id="mose-1-1-data_criteria">
-                    Data Achieved: <input type="checkbox" id="mose-1-1-data_achieved" name="mose-1-1-check" value="1"><br>
-                    Evaluation Criteria: <input type="text" size="100" id="mose-1-1-eval_critieria"><br>
-                    Result:
+                    <button type="button" id="mose-1-1-swap" onclick="clickbutton(event.target.id)">E/S</button>
+                    <button type="button" id="mose-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
+                    <button type="button" id="mose-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
+                    <button type="button" id="mose-1-1-append" onclick="clickbutton(event.target.id)">+</button>
+                    <button type="button" id="mose-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button><br>
+                    <a>Data Collection Criteria: </a><input type="text" size="100" id="mose-1-1-data_collection">
+                    <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mose-1-1-check" value="1" id="mose-1-1-data_achieved"><br>
+                    <a>Evaluation Criteria: </a><input type="text" size="100" id="mose-1-1-eval_criteria"><br>
+                    <a>Result: </a>
                     <select name="result" id="mose-1-1-result_selection">
                         <option value="None"></option>
                         <option value="Sat">Satisfactory</option>
@@ -64,17 +68,17 @@
                         <option value="Incon">Unresolved (Inconclusive)</option>
                         <option value="NotTested">Unresolved (Not Tested)</option>
                     </select><input type="text" size="100" id="mose-1-1-result_text"><br>
-                    Discussion:<br><textarea cols = "100" rows = "3" id="mose-1-1-discussion"></textarea><br>
-                    Conclusion:<br><textarea cols = "100" rows = "3" id="mose-1-1-conclusion"></textarea><br>
-                    Recommendation:<br><textarea cols = "100" rows = "3" id="mose-1-1-recommendation"></textarea><br>
-                    <ul id="ul-mose-1-1">
-                        <li id="li-mop-1-1-1">
+                    <a>Discussion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-discussion"></textarea><br>
+                    <a>Conclusion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-conclusion"></textarea><br>
+                    <a>Recommendation:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-recommendation"></textarea><br>
+                    <ul id="mose-1-1-ul">
+                        <li id="mop-1-1-1-li">
                             <a id="mop-1-1-1-title">MOP 1-1-1: </a>
                             <input type="text" size="100" id="mop-1-1-1-text">
-                            <button type="button" id="mop-1-1-1-insert" onclick="clickbutton('insert', 3, event.target.id)">I</button>
-                            <button type="button" id="mop-1-1-1-remove" onclick="clickbutton('remove', 3, event.target.id)">-</button>
-                            <button type="button" id="mop-1-1-1-append" onclick="clickbutton('append', 3, event.target.id)">+</button>
-                            <button type="button" id="mop-1-1-1-lock" onclick="clickbutton(  'lock',   3, event.target.id)">Lock</button><br>
+                            <button type="button" id="mop-1-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
+                            <button type="button" id="mop-1-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
+                            <button type="button" id="mop-1-1-1-append" onclick="clickbutton(event.target.id)">+</button>
+                            <button type="button" id="mop-1-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button><br>
                             <a>Data Collection Criteria: </a><input type="text" size="100" id="mop-1-1-1-data_collection">
                             <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mop-1-1-1-check" value="1" id="mop-1-1-1-data_achieved"><br>
                             <a>Evaluation Criteria: </a><input type="text" size="100" id="mop-1-1-1-eval_criteria"><br>
@@ -103,370 +107,343 @@
     <a href="mailto:thomas.kubler@gmail.com">thomas.kubler@gmail.com</a>
 </body>
 <script>
-    var click = 0;
-    var numcoi = 1;
-    var nummose = [];
-    nummose[0] = 1;
-    var nummop = [];
-    nummop[0] = [];
-    nummop[0][0] = 1; 
-    const MOPResultOptions = ["","Met Criteria","Did Not Meet Criteria","Report Only","Insufficient Data","Inconclusive","Not Tested"];
     
-    function new_mose(ncoi, nmose){
-        var numbers = ''+ncoi+'-'+nmose;
+    function new_item(depth, ncoi, nmose = 0, nmop = 0){
+        console.log("new_Item, depth, ncoi, nmose, nmop: ",depth, ncoi, nmose, nmop);
+        //depth is 1-coi, 2-mose, or 3-mop
+        //whatisit = 'coi' or 'mop' or 'mose' in lowercase
+        var design_vector, whatisit, numbers, titleprefix;
+        if(depth == 1){
+            design_vector = DESIGNCOI;
+            whatisit = 'coi';
+            titleprefix = 'COI-';
+            numbers = ''+ncoi;
+        }
+        else if(depth == 2){
+            design_vector = DESIGNMOSE;
+            whatisit = 'mose';
+            titleprefix = 'MOE ';
+            numbers = ''+ncoi+'-'+nmose;
+        }
+        else{
+            design_vector = DESIGNMOP;
+            whatisit = 'mop';
+            titleprefix = 'MOP ';
+            numbers = ''+ncoi+'-'+nmose+'-'+nmop;
+        }
+
         var newLI = document.createElement('li');
-        newLI.id = 'li-mose-'+numbers;
-        click++;
+        newLI.id = whatisit+'-'+numbers+'-li';
 
-        var newA = document.createElement('a');
-        newA.id = 'mose-'+numbers+'-title';
-        newA.textContent = 'MOE '+numbers+': ';
-        newLI.appendChild(newA);
-
-        var newT = document.createElement('input');
-        newT.id = "mose-"+numbers+'-text';
-        newT.setAttribute('type','text');
-        newT.size = '100';
-        newLI.appendChild(newT);
-
-        var newB = document.createElement('button');
-        newB.innerText = 'I';
-        newB.id = 'mose-'+numbers+'-insert';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('insert','2', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = '-';
-        newB.id = 'mose-'+numbers+'-remove';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('remove','2', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = '+';
-        newB.id = 'mose-'+numbers+'-append';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('append','2', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = 'Lock';
-        newB.id = 'mose-'+numbers+'-lock';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('lock','2', event.target.id)});
-        newLI.appendChild(newB);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
+        for(var i = 0; i < design_vector.length-6; i+=7){
+            var visA = design_vector[i];
+            var visB = design_vector[i+1];
+            var visC = design_vector[i+2];
+            var visD = design_vector[i+3];
+            var tag = design_vector[i+4];
+            var content = design_vector[i+5];
+            var suffix = design_vector[i+6];
+            if(tag == 'buttons'){
+                var button_icons = ['I','-','+',"+\u2193",'Lock'];
+                var button_cmds  = ['insert','remove','append','addchild','lock'];
+                for(var b = 0; b < button_cmds.length; b++){
+                    var newB = document.createElement('button');
+                    newB.innerText = button_icons[b];
+                    newB.id = whatisit+'-'+numbers+'-'+button_cmds[b];
+                    newB.addEventListener('click',function(event){clickbutton(event.target.id);});
+                    //console.log(button_cmds[b]);
+                    if(!(button_cmds[b] == 'addchild' && depth == 3)){
+                        newLI.appendChild(newB);
+                    }
+                }
+            }
+            else if(tag == 'select'){
+                //do special for select
+            }
+            else{
+                var newElement = document.createElement(tag);
+                if(suffix.length > 0){
+                    newElement.id = whatisit+'-'+numbers+'-'+suffix;
+                }
+                if(tag.toLowerCase() == 'a'){
+                    newElement.innerText = content;
+                    if(suffix == 'title'){
+                        newElement.innerText = content+numbers;
+                    }
+                }
+                if(tag.toLowerCase() =='textarea'){
+                    newElement.rows = '3'; newElement.cols = '100';
+                }
+                if(tag.toLowerCase() == 'input'){
+                    newElement.setAttribute('type','text');
+                    newElement.size = '100';
+                }
+                newLI.appendChild(newElement);
+            }
+        }
+        console.log("newLI:",newLI,"end new item");
         return newLI;
     }
 
-    function new_mop(ncoi, nmose, nmop){
-        var numbers = ''+ncoi+'-'+nmose+'-'+nmop;
-        //console.log("making: ",ncoi, nmose, nmop);
-        var newLI = document.createElement('li');
-        newLI.id = 'li-mop-'+numbers;
-        click++;
-
-        var newA = document.createElement('a');
-        newA.id = 'mop-'+numbers+'-title';
-        newA.textContent = 'MOP '+numbers+': ';
-        newLI.appendChild(newA);
-                
-        var newT = document.createElement('input');
-        newT.id = "mop-"+numbers+'-text';
-        newT.setAttribute('type','text');
-        newT.size = '100';
-        newLI.appendChild(newT);
-
-        var newB = document.createElement('button');
-        newB.innerText = 'I';
-        newB.id = 'mop-'+numbers+'-insert';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('insert','3', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = '-';
-        newB.id = 'mop-'+numbers+'-remove';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('remove','3', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = '+';
-        newB.id = 'mop-'+numbers+'-append';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('append','3', event.target.id);});
-        newLI.appendChild(newB);
-
-        var newB = document.createElement('button');
-        newB.innerText = 'Lock';
-        newB.id = 'mop-'+numbers+'-lock';
-        newB.addEventListener('click', function(event){ console.log("I heard:",event.currentTarget.id); clickbutton('lock','3', event.target.id)});
-        newLI.appendChild(newB);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Data Collection Criteria: ';
-        newLI.appendChild(newA);
-
-        var newT = document.createElement('input');
-        newT.id = "mop-"+numbers+'-data_collection';
-        newT.setAttribute('type','text');
-        newT.size = '100';
-        newLI.appendChild(newT);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Data Achieved: ';
-        newLI.appendChild(newA);
-
-        var newT = document.createElement('input');
-        newT.id = "mop-"+numbers+'-check';
-        newT.setAttribute('type','checkbox');
-        newT.value = '1';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Evaluation Criteria: ';
-        newLI.appendChild(newA);
-
-        var newT = document.createElement('input');
-        newT.id = "mop-"+numbers+'-eval_criteria';
-        newT.setAttribute('type','text');
-        newT.size = '100';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Result: ';
-        newLI.appendChild(newA);
-
-        var newS = document.createElement('select');
-        newS.id = "mop-"+numbers+'-result_selection';
-
-        for(a in MOPResultOptions){
-            var newO = document.createElement('option');
-            newO.value = MOPResultOptions[a];
-            newO.innerText = MOPResultOptions[a];
-            newS.appendChild(newO);
+    function clickbutton(targetid){
+        console.log("clickbutton(targetid)",targetid);
+        //parse out the coi, mose, mop and depth
+        var params = targetid.split('-');
+        var parentname;
+        var wcoi, wmose, wmop, numbers, parentlist, depth, list_location,newcoi,newmose,newmop;
+        var cmd = params[params.length-1];
+        list_location = 0;
+        wcoi = 0; wmose = 0; wmop = 0;
+        if(params[0] == 'coi'){
+            depth = 1;
+            wcoi = parseInt(params[1]);
+            parentlist = document.getElementById("thelist");
+            numbers = params[1];
+            list_location = wcoi-1;
         }
-        newLI.appendChild(newS);
+        else if(params[0] == 'mose'){
+            depth = 2;
+            wcoi = parseInt(params[1]);
+            wmose = parseInt(params[2]);
+            numbers = params[1]+'-'+params[2];
+            parentname = 'coi-'+params[1];
+            parentlist = document.getElementById(parentname+'-ul');
+            list_location = wmose-1;
+        }
+        else if(params[0] == 'mop'){
+            depth = 3;
+            wcoi = parseInt(params[1]);
+            wmose = parseInt(params[2]);
+            wmop = parseInt(params[3]);
+            numbers = params[1]+'-'+params[2]+'-'+params[3];
+            parentname = 'mose-'+params[1]+'-'+params[2];
+            parentlist = document.getElementById(parentname+'-ul');
+            list_location = wmop-1;
+        }
+        var whichtitle = targetid.replace(cmd,'title');
+        console.log("parse: wcoi, wmoise, wmop, cmd, listlocation: ",wcoi, wmose, wmop, cmd, list_location);
 
-        var newT = document.createElement('input');
-        newT.id = "mop-"+numbers+'-result_text';
-        newT.setAttribute('type','text');
-        newT.size = '100';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Dicussion: ';
-        newLI.appendChild(newA);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newT = document.createElement('textarea');
-        newT.id = "mop-"+numbers+'-discussion';
-        newT.cols = '100';
-        newT.rows = '3';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Conclusion: ';
-        newLI.appendChild(newA);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newT = document.createElement('textarea');
-        newT.id = "mop-"+numbers+'-conclusion';
-        newT.cols = '100';
-        newT.rows = '3';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newA = document.createElement('a');
-        newA.textContent = 'Recommendation: ';
-        newLI.appendChild(newA);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        var newT = document.createElement('textarea');
-        newT.id = "mop-"+numbers+'-recommendation';
-        newT.cols = '100';
-        newT.rows = '3';
-        newLI.appendChild(newT);
-
-        var lineBreak = document.createElement("br");
-        newLI.appendChild(lineBreak);
-
-        return newLI; 
-    }
-
-    function renumber_mose(wcoi, wmose, newmose){
-        var numbers = ''+wcoi+'-'+wmose;
-        var newNumbers = ''+wcoi+'-'+newmose;
-        var h = document.getElementById('li-mose-'+numbers);
-        console.log("burg:",h);
-        h.id = 'li-mose-'+newNumbers;
-        for(const child of h.children){
-            console.log(child);
-            if(child.id.length > 0){
-                if(child.nodeName=="A") child.textContent = 'MOE '+newNumbers+': ';
-                var namearray = child.id.split('-');
-                namearray[2] = newmose.toString();
-                child.id = namearray[0]+"-"+namearray[1]+"-"+namearray[2]+"-"+namearray[3]+"-"+namearray[4];
+        function increment_item(listitem, depth, delta){
+            //listitem is live html object, parse out the number name and replace it with a new number name.
+            var oldname, newname;
+            var idvector = listitem.id.split('-'); //li item's numbers
+            //operate on the live collection from the child command to edit the DOM, increment id's and change text
+            switch(depth){
+                case 1:
+                    oldname = idvector[1];
+                    newname = (parseInt(idvector[1])+delta).toString();
+                    break;
+                case 2:
+                    oldname = idvector[1]+'-'+idvector[2];
+                    newname = idvector[1]+'-'+(parseInt(idvector[2])+delta).toString();
+                    break;
+                case 3: 
+                    oldname = idvector[1]+'-'+idvector[2]+'-'+idvector[3];
+                    newname = idvector[1]+'-'+idvector[2]+'-'+(parseInt(idvector[3])+delta).toString();
+                    break;
+                default: oldname = '1'; newname = '1'; break;
             }
-        }
-    }
-
-    function renumber_mop(wcoi, wmose, wmop, newmop){
-        console.log("renumber mop ",wcoi,wmose,wmop, newmop);
-        var numbers = ''+wcoi+'-'+wmose+'-'+wmop;
-        var newNumbers = ''+wcoi+'-'+wmose+'-'+newmop;
-        var h = document.getElementById('li-mop-'+numbers);
-        h.id = 'li-mop-'+newNumbers;
-        for(const child of h.children){
-            console.log(child);
-            if(child.id.length > 0){
-                if(child.nodeName=="A"){
-                    console.log("a type");
-                    child.textContent = 'MOP '+newNumbers+": ";
+            listitem.id = listitem.id.replace(oldname, newname);
+            for(const child of listitem.children){
+                //console.log("check: ",child.id);
+                if(child.id.length>0){
+                    if(child.nodeName=="A"){
+                        console.log("child: ",targetid,child.id,child.textContent,oldname, newname);
+                        child.textContent = child.textContent.replace(oldname,newname);
+                        console.log("became:",targetid,child.id,child.textContent);
+                    }
+                    //console.log("childid: ",child.id);
+                    child.id = child.id.replace(oldname,newname);
+                    //console.log(" became: ",child.id);
                 }
-                var namearray = child.id.split("-");
-                namearray[3] = newmop.toString();
-                child.id = namearray[0]+"-"+namearray[1]+"-"+namearray[2]+"-"+namearray[3]+"-"+namearray[4];
             }
+        }
+
+        switch(cmd){
+            case 'remove': 
+                var oldlength = parentlist.children.length;
+                var elementName = params[0]+'-'+numbers+'-li';
+                var element = document.getElementById(elementName);
+                element.parentNode.removeChild(element);
+                for (let i = list_location; i < parentlist.children.length; i++) {
+                    increment_item(parentlist.children[i], depth, -1);
+                }
+                //reference oldlength since after delete, may not be accessible at = 0.
+                if(depth == 1 && oldlength == 2){
+                    document.getElementById('coi-1-remove').disabled = true;  
+                } //can't remove last COI.
+                if(depth > 1 && oldlength == 1){
+                    document.getElementById(parentname+'addchild').disabled = false; 
+                }//re-enable the COI or MOP add child button if sublist goes to zero.
+            break;
+            case 'insert':
+                //from current node, increase all + 1
+                if(depth == 1){
+                    document.getElementById('coi-1-remove').disabled = false;  
+                }     
+                var newLI = new_item(depth, wcoi, wmose, wmop);
+                parentlist.insertBefore(newLI, parentlist.children[list_location]);
+                for (let i = list_location+1; i < parentlist.children.length; i++){
+                    increment_item(parentlist.children[i], depth, 1);
+                }
+            break;
+            case 'append': 
+                //first, the new item needs to be incremented per depth
+                switch(depth){
+                    case 1: wcoi++; break;
+                    case 2: wmose++; break;
+                    case 3: wmop++; break;
+                    default: break;
+                }
+                //increment after insert.
+                for (let i = list_location+1; i < parentlist.children.length; i++) {
+                    increment_item(parentlist.children[i], depth, 1);
+                }
+                //now add the item to the list
+                var newLI = new_item(depth, wcoi, wmose, wmop);
+                parentlist.insertBefore(newLI,parentlist.children[list_location+1]); 
+                //enable the delete button (only applies to COI-1 delete);
+                if(depth == 1){
+                    firstcoi = document.getElementById('coi-1-remove').disabled = false;  
+                }         
+                console.log("list_location: ",list_location);
+                console.log(parentlist.children);
+            break;
+            case 'addchild': 
+                //put a new child in front list of below
+                //first, inherit the previous coi/mose
+                var whichli = targetid.replace(cmd,'li');
+                var thislistitem = document.getElementById(whichli);
+                var prefix;
+                switch(depth){
+                    case 1: wmose = 1; prefix = 'coi'; break;
+                    case 2: wmop = 1; prefix = 'mose'; break; 
+                    case 3: alert("broken, cannot be depth 3 add child");
+                }
+                //create the new item
+                theUL = document.getElementById(prefix+'-'+numbers+'-ul');
+                var newLI = new_item(depth+1, wcoi, wmose, wmop);
+                theUL.appendChild(newLI);
+                //disable the addchild button
+                var thisbutton = document.getElementById(targetid);
+                thisbutton.disabled = true; //button is disabled once ul is filled
+            break;
+            case 'swap': 
+            break;
+            case 'lock': 
+            break;
+            case 'default': 
+            break;
         }
     }
 
-    function clickbutton(button_action, depth, targetid){
-        var whichbutton = targetid;
-        //parse out the coi, mose, mop from the_arg, based on depth
-        var wcoi, wmose, wmop;
-        var coilist, moselist, moplist;
-        var textarray = whichbutton.split("-");
-        wcoi = parseInt(textarray[1]);
-        var coilist = document.getElementById("thelist");
-
-        if(depth > 1){
-            wmose = parseInt(textarray[2]);
-            moselist = document.getElementById("ul-coi-"+wcoi);
-        }
-        else wmose = 0;
-        if(depth > 2){
-            wmop = parseInt(textarray[3]);
-            moplist = document.getElementById("ul-mose-"+wcoi+"-"+wmose);
-        }
-        else wmop = 0;
-        console.log("parse: ",wcoi, wmose, wmop);
-
-        if(depth == 3){
-            switch(button_action){
-                case 'swap': //doesn't exist 
-                    break;
-                case 'insert': //code
-                    var newLI = new_mop(wcoi, wmose, wmop); //creates a new List Item to be placed after where the button was clicked.
-                    for(var iterator = nummop[wcoi-1][wmose-1]; iterator >= wmop; iterator--){
-                        console.log("iterate ",iterator);
-                        renumber_mop(wcoi, wmose, iterator, iterator+1);
-                    }
-                    //now insert
-                    moplist.insertBefore(newLI, moplist.children[wmop-1]);
-                    nummop[wcoi-1][wmose-1]++;
-                    console.log("end insert, wmop:",wmop, "num mop: ",nummop[wcoi-1][wmose-1]);
-                    break;
-                case 'remove': //code
-                    var elementName = "li-mop-"+wcoi+"-"+wmose+"-"+wmop;
-                    var element = document.getElementById(elementName);
-                    element.parentNode.removeChild(element);
-                    //renumber all items after the delete location
-                    for(var iterator = wmop + 1; iterator <= nummop[wcoi-1][wmose-1]; iterator++){
-                        console.log("iterate ",iterator);
-                        renumber_mop(wcoi, wmose, iterator, iterator-1);
-                    }
-                    nummop[wcoi-1][wmose-1]--;
-                    break;
-                case 'append':
-                    var newLI = new_mop(wcoi, wmose, wmop+1); //creates a new List Item to be placed after where the button was clicked.
-                    //if this mop # is lower than the number of mops in this category, this isn't the last one, and an insertBefore is used
-                    console.log("current number of mops: ",nummop[wcoi-1][wmose-1]);
-                    if(wmop < nummop[wcoi-1][wmose-1]){
-                        console.log("doing an insert");
-                        //but before inserting, increment the later MOPs, starting at the highest number and moving down!
-                        for(var iterator = nummop[wcoi-1][wmose-1]; iterator >= wmop + 1; iterator--){
-                            console.log("iterate ",iterator);
-                            renumber_mop(wcoi, wmose, iterator, iterator+1);
-                        }
-                        //now insert
-                        moplist.insertBefore(newLI, moplist.children[wmop]);
-                        console.log("num mop = ",nummop[wcoi-1][wmose-1]);
-                    }
-                    else{
-                        console.log("doing an append");
-                        moplist.appendChild(newLI);
-                    }
-                    nummop[wcoi-1][wmose-1]++;
-                    console.log("end append, wmop:",wmop, "num mop: ",nummop[wcoi-1][wmose-1]);
-                    break;
-                case 'lock': //code
-                    break;
-                default: break;
-            }
-        }
-        else if(depth == 2){
-            switch(button_action){
-                case 'swap': break;
-                case 'lock': break;
-                case 'insert': 
-                    var newLI = new_mose(wcoi, wmose);
-                    for(var i = nummose[wcoi-1]; i >= wmose; i--){
-                        renumber_mose(wcoi, i, i+1);
-                    }
-                    moselist.insertBefore(newLI, moselist.children[wmose-1]);
-                    nummose[wcoi-1]++;
+    function toggleMode(){
+        var currentMode = document.getElementById('current-mode').innerText;
+        switch(currentMode){
+            case 'Plan':
+                document.getElementById('current-mode').innerText = 'Progress';
                 break;
-                case 'append': 
-                    console.log("appending depth 2");
-                    var newLI = new_mose(wcoi, wmose+1); //create a new List Item to be placed after where the button was clicked.
-                    if(wmose < nummose[wcoi-1]){
-                        for(var i = nummose[wcoi-1]; i >= wmose + 1; i--){
-                            renumber_mose(wcoi, i, i+1);
-                        }
-                        moselist.insertBefore(newLI, moselist.children[wmose]);
-                    }
-                    else{
-                        console.log("about to append");
-                        console.log(moselist,"and second:",newLI);
-                        moselist.appendChild(newLI);
-                    }
-                    nummose[wcoi-1]++;
+            case 'Progress':
+                document.getElementById('current-mode').innerText = 'Interim';
                 break;
-                case 'remove': 
-                    var elementName = "li-mose-"+wcoi+"-"+wmose;
-                    var element = document.getElementById(elementName);
-                    element.parentNode.removeChild(element);
-                    for(var i = wmose + 1; i <= nummose[wcoi-1]; i++){
-                        renumber_mose(wcoi, i, i-1);
-                    }
-                    nummose[wcoi-1]--;
-                break;
-            }
+            case 'Interim':
+            document.getElementById('current-mode').innerText = 'Final';
+            break;
+            case 'Final':
+            document.getElementById('current-mode').innerText = 'Progress';
+            break;
+            case 'default':
+            document.getElementById('current-mode').innerText = 'Progress';
+            break;
         }
-        //console.log(the_arg,which_button);
     }
+
+    //design data:
+    const MOPOPTIONS = ["","Met Criteria","Did Not Meet Criteria","Report Only","Insufficient Data","Inconclusive","Not Tested"];
+    const MOSEOPTIONS = ['','Satisfactory','Satisfactory (Excellent)','Satisfactory (Good)',
+        'Satisfactory (Fair)','Marginal(Borderline)','Unsatisfactory','Unsatisfactory (Poor)',
+        'Unsatisfactory (Unsafe)','Report Only','Unresolved','Unresolved (Insufficient Data)',
+        'Unresolved (Inconclusive)','Unresolved (Not Tested)'];
+    const MODES = ['Plan','Progress','Interim','Final'];
+    const COIOPTIONS = ['','Yes','No','Unresolved','Yes, With Exception','Yes, with Exceptions'];
+    const DESIGNCOI = [
+        //triads/triples of TYPE, CONTENT, and ID suffix, and visibility Booleans.
+        1,1,1,1,'a','COI-','title', //title will get its text specially edited
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'buttons','','', //special buttons are auto-gen by code. Do not go to document.
+        1,1,1,1,'br','','', //line break only for the web editor.
+        0,0,1,1,'a','Result: ','', //blank in third of triad will mean no id is assigned.
+        0,0,1,1,'select','COI','result', //a select for COI results
+        0,1,1,1,'input','text','result_text',
+        0,0,1,1,'br','','', //another ignored triple for a line break;
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        1,1,1,1,'ul','','ul']; //and automatically adds the ul for the sub-tree
+    const DESIGNMOSE = [
+        1,1,1,1,'a','MOE ','title',
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'buttons','','',
+        1,1,1,1,'br','','',
+        0,1,1,1,'a','Data Collection Criteria: ','',
+        0,1,1,1,'input','text','data_collection',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Evaluation Criteria: ','',
+        0,1,1,1,'input','text','eval_criteria',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Result: ','',
+        0,1,1,1,'select','MOSE','result',
+        0,1,1,1,'input','text','result_text',
+        0,1,1,1,'br','','',
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Conclusion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','conclusion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Recommendation: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','recommendation',
+        0,0,1,1,'br','','',
+        1,1,1,1,'ul','','ul'
+    ];
+    const DESIGNMOP = [
+        1,1,1,1,'a','MOP ','title',
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'buttons','','',
+        1,1,1,1,'br','','',
+        0,1,1,1,'a','Data Collection Criteria: ','',
+        0,1,1,1,'input','text','data_collection',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Evaluation Criteria: ','',
+        0,1,1,1,'input','text','eval_criteria',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Result: ','',
+        0,1,1,1,'select','MOP','result',
+        0,1,1,1,'input','text','result_text',
+        0,1,1,1,'br','','',
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Conclusion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','conclusion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Recommendation: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','recommendation',
+        0,0,1,1,'br','',''
+    ]
 </script>
 </html>
 
