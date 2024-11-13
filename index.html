@@ -25,7 +25,107 @@
     <ul id="test-1-ul">
     </ul>
     <hr>
+    <div id="div-tables">
+        <table style="width:600px">
+            <tr>
+                <th class = "coiheader" colspan='3'>COI-1: Does the thingymajig work in the desert? Even after there is too much
+                    text will it overflow and make a taller row or will it flow out elsewhere?
+                    Does the thingymajig work in the desert? Even after there is too much
+                    text will it overflow and make a taller row or will it flow out elsewhere?</th>
+            </tr>
+            <tr>
+                <th style="width:10%" class="moeheader">MOE</th>
+                <th style="width:70%" class="secondrow" rowspan="2" >Description</th>
+                <th style="width:20%" class="secondrow" rowspan="2">Evaluation Criteria</th>
+            </tr>
+            <tr>
+                <th class="mopheader">MOP</th>
+            </tr>
+            <tr class = "datacell">
+                <td>1-1</td>
+                <td>Fly Recon</td>
+                <td>Satisfactory</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-1-1</td>
+                <td class = "datacell">Range</td>
+                <td class = "datacell">&gt 400 NM</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-1-2</td>
+                <td class = "datacell">Endurance</td>
+                <td class = "datacell">&gt 1 hour</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-1-3</td>
+                <td class = "datacell">Altitude</td>
+                <td class = "datacell">&gt 10,000 ft</td>
+            </tr>
+            <tr class = "datacell">
+                <td>1-2</td>
+                <td>Transmit Photos</td>
+                <td>Satisfactory</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-2-1</td>
+                <td class = "datacell">Data Throughput</td>
+                <td class = "datacell">&gt 20 Mbps</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-2-2</td>
+                <td class = "datacell">Photo Size</td>
+                <td class = "datacell">&gt 5 Megapixel</td>
+            </tr>
+            <tr>
+                <td class = "mopcell">1-2-3</td>
+                <td class = "datacell">Communication Range</td>
+                <td class = "datacell">&gt 100 NM</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
 </body>
+<style>
+    .coiheader {
+        background-color: lightgrey;
+        font-size: 12px;
+        text-align: left;
+        font-family: "Times New Roman", Times, serif;
+    }
+    .secondrow {
+        background-color: lightgray;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: center;
+        font-family: "Times New Roman", Times, serif;
+    }
+    .moeheader {
+        background-color: lightgray;
+        text-align: left;
+        font-size: 12px;
+        border-bottom: none;
+    }
+    .mopheader {
+        background-color: lightgray;
+        border-top: none;
+        font-size: 12px;
+        text-align: right;
+        font-style: italic;
+        font-weight: normal;
+    }
+    .datacell{
+        background-color: white;
+        font-size: 12px;
+        text-align: left;
+        font-family: "Times New Roman", Times, serif;
+    }
+    .mopcell{
+        background-color: white;
+        font-size: 12px;
+        text-align: right;
+        font-family: "Times New Roman", Times, serif;
+    }
+</style>
 <script>
     //constants.
     const standard_prefixes = ['test','coi','mose','mop'];
@@ -44,107 +144,108 @@
     const COIOPTIONS = ['','Yes','No','Unresolved','Yes, With Exception','Yes, with Exceptions'];
     const DESIGNCOI = [
         //triads/triples of TYPE, CONTENT, and ID suffix, and visibility Booleans.
-        1,1,1,1,'a','COI-','title', //title will get its text specially edited
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'button',button_icons[0],button_cmds[0], //
-        1,1,1,1,'button',button_icons[1],button_cmds[1], //
-        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
-        1,1,1,1,'button',button_icons[3],button_cmds[3], //
-        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
-        1,1,1,1,'button',button_icons[5],button_cmds[5], //
-        1,1,1,1,'button',button_icons[6],button_cmds[6], //
-        1,1,1,1,'br','','', //line break only for the web editor.
-        0,0,1,1,'a','Result: ','', //blank in third of triad will mean no id is assigned.
-        0,0,1,1,'select','COI','result', //a select for COI results
-        0,1,1,1,'input','text','result_text',
-        0,0,1,1,'br','','', //another ignored triple for a line break;
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        1,1,1,1,'ul','','ul']; //and automatically adds the ul for the sub-tree
+        1,1,1,1,1,'a','COI-','title', //title will get its text specially edited
+        1,1,1,1,1,'input','text','text',
+        1,1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        1,1,1,1,1,'button',button_icons[3],button_cmds[3], //
+        1,1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,1,'br','','', //line break only for the web editor.
+        0,0,1,1,1,'a','Result: ','', //blank in third of triad will mean no id is assigned.
+        0,0,1,1,1,'select','COI','result', //a select for COI results
+        0,1,1,1,1,'input','text','result_text',
+        0,0,1,1,1,'br','','', //another ignored triple for a line break;
+        0,0,1,1,1,'a','Discussion: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','discussion',
+        0,0,1,1,1,'br','','',
+        1,1,1,1,1,'ul','','ul']; //and automatically adds the ul for the sub-tree
     const DESIGNMOSE = [
-        1,1,1,1,'a','MOE ','title',
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'button',button_icons[0],button_cmds[0], //
-        1,1,1,1,'button',button_icons[1],button_cmds[1], //
-        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
-        1,1,1,1,'button',button_icons[3],button_cmds[3], //
-        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
-        1,1,1,1,'button',button_icons[5],button_cmds[5], //
-        1,1,1,1,'button',button_icons[6],button_cmds[6], //
-        1,1,1,1,'br','','',
-        0,1,1,1,'a','Data Collection Criteria: ','',
-        0,1,1,1,'input','text','data_collection',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Data Achieved: ','',
-        0,1,1,1,'input','checkbox','data_achieved',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Evaluation Criteria: ','',
-        0,1,1,1,'input','text','eval_criteria',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Result: ','',
-        0,1,1,1,'select','MOSE','result',
-        0,1,1,1,'input','text','result_text',
-        0,1,1,1,'br','','',
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Conclusion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','conclusion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Recommendation: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','recommendation',
-        0,0,1,1,'br','','',
-        1,1,1,1,'ul','','ul'
+        1,1,1,1,1,'a','MOE ','title',
+        1,1,1,1,1,'input','text','text',
+        1,1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        1,1,1,1,1,'button',button_icons[3],button_cmds[3], //
+        1,1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,1,'br','','',
+        1,1,1,1,1,'a','Data Collection Criteria: ','',
+        1,1,1,1,1,'input','text','data_collection',
+        1,1,1,1,1,'br','','',
+        0,1,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,1,'br','','',
+        1,1,1,1,1,'a','Evaluation Criteria: ','',
+        1,1,1,1,1,'input','text','eval_criteria',
+        1,1,1,1,1,'br','','',
+        0,1,1,1,1,'a','Result: ','',
+        0,1,1,1,1,'select','MOSE','result',
+        0,1,1,1,1,'input','text','result_text',
+        0,1,1,1,1,'br','','',
+        0,0,1,1,1,'a','Discussion: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','discussion',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'a','Conclusion: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','conclusion',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'a','Recommendation: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','recommendation',
+        0,0,1,1,1,'br','','',
+        1,1,1,1,1,'ul','','ul'
     ];
     const DESIGNMOP = [
-        1,1,1,1,'a','MOP ','title',
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'button',button_icons[0],button_cmds[0], //
-        1,1,1,1,'button',button_icons[1],button_cmds[1], //
-        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
-        //1,1,1,1,'button',button_icons[3],button_cmds[3], //never shown, can't add child
-        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
-        1,1,1,1,'button',button_icons[5],button_cmds[5], //
-        1,1,1,1,'button',button_icons[6],button_cmds[6], //
-        1,1,1,1,'br','','',
-        0,1,1,1,'a','Data Collection Criteria: ','',
-        0,1,1,1,'input','text','data_collection',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Data Achieved: ','',
-        0,1,1,1,'input','checkbox','data_achieved',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Evaluation Criteria: ','',
-        0,1,1,1,'input','text','eval_criteria',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Result: ','',
-        0,1,1,1,'select','MOP','result',
-        0,1,1,1,'input','text','result_text',
-        0,1,1,1,'br','','',
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Conclusion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','conclusion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Recommendation: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','recommendation',
-        0,0,1,1,'br','',''
+        1,1,1,1,1,'a','MOP ','title',
+        1,1,1,1,1,'input','text','text',
+        1,1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        //1,1,1,1,1,'button',button_icons[3],button_cmds[3], //never shown, can't add child
+        1,1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,1,'br','','',
+        1,1,1,1,1,'a','Data Collection Criteria: ','',
+        1,1,1,1,1,'input','text','data_collection',
+        1,1,1,1,1,'br','','',
+        0,1,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,1,'br','','',
+        1,1,1,1,1,'a','Evaluation Criteria: ','',
+        1,1,1,1,1,'input','text','eval_criteria',
+        1,1,1,1,1,'br','','',
+        0,1,1,1,1,'a','Result: ','',
+        0,1,1,1,1,'select','MOP','result',
+        0,1,1,1,1,'input','text','result_text',
+        0,1,1,1,1,'br','','',
+        0,0,1,1,1,'a','Discussion: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','discussion',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'a','Conclusion: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','conclusion',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'a','Recommendation: ','',
+        0,0,1,1,1,'br','','',
+        0,0,1,1,1,'textarea','','recommendation',
+        0,0,1,1,1,'br','',''
     ];
     //variables, 
 
     //functions
     function new_item(depth, ncoi, nmose = 0, nmop = 0){
-        console.log("new_Item, depth, ncoi, nmose, nmop: ",depth, ncoi, nmose, nmop);
         //depth is 1-coi, 2-mose, or 3-mop
         //whatisit = 'coi' or 'mop' or 'mose' in lowercase
+        var current_vis_mode = document.getElementById('current-mode').innerText;
+        var current_vis_index = MODES.findIndex(element => element == current_vis_mode);
         var design_vector, whatisit, numbers, titleprefix;
         if(depth == 1){
             design_vector = DESIGNCOI;
@@ -168,40 +269,31 @@
         var newLI = document.createElement('li');
         newLI.id = whatisit+'-'+numbers+'-li';
 
-        for(var i = 0; i < design_vector.length-6; i+=7){
-            var visA = design_vector[i];
-            var visB = design_vector[i+1];
-            var visC = design_vector[i+2];
-            var visD = design_vector[i+3];
-            var tag = design_vector[i+4];
-            var content = design_vector[i+5];
-            var suffix = design_vector[i+6];
+        for(var i = 0; i < design_vector.length-6; i+=8){
+            var visibility = [design_vector[i], design_vector[i+1], design_vector[i+2], design_vector[i+3], design_vector[i+4]];
+            var tag = design_vector[i+5];
+            var content = design_vector[i+6];
+            var suffix = design_vector[i+7];
             if(tag == 'button'){
                 let newB = document.createElement('button');
                 newB.innerText = content;
                 newB.id = whatisit+'-'+numbers+'-'+suffix;
+                if(visibility[current_vis_index] < 1){
+                    newB.style.display = 'none';
+                }
                 newB.onclick = () => clickbutton(newB.id);
-                newLI.appendChild(newB);
-                /*
-                for(var b = 0; b < button_cmds.length; b++){
-                    let newB = document.createElement('button'); //the "let" allows the variable to be forgotten
-                    newB.innerText = button_icons[b];
-                    //console.log(newB);
-                    newB.id = whatisit+'-'+numbers+'-'+button_cmds[b];
-                    //newB.addEventListener('click',function(event){clickbutton(event.target.id);});
-                    //console.log(button_cmds[b]);
-                    if(!(button_cmds[b] == 'addchild' && depth == 3)){
-                        newLI.appendChild(newB);
-                        //console.log(document.getElementById(newB.id));
-                        newB.onclick = () => clickbutton(newB.id);
-                    }
-                }*/
+                newLI.appendChild(newB); 
             }
             else if(tag == 'select'){
                 //do special for select
+                //var newS;
+                //if(visibility[current_vis_index] < 1) newS.style.display = 'none';
             }
             else{
                 var newElement = document.createElement(tag);
+                if(visibility[current_vis_index] < 1){
+                    newElement.style.display = 'none';
+                }
                 if(suffix.length > 0){
                     newElement.id = whatisit+'-'+numbers+'-'+suffix;
                 }
@@ -281,6 +373,23 @@
                 }
                 count++;
             }
+        }
+    }
+
+    function refreshtables(){
+        //use div-tables
+        var tableDIV = document.getElementById('div-tables');
+        while(tableDIV.firstChild){
+            tableDIV.removeChild(tableDIV.firstChild());
+        }
+        //<ul id="test-1-ul">
+        const PLAN_HEADER = ['MOE','Description','Evaluation Criteria'];
+        const REPORT_HEADER = ['MOE','Description','Evaluation Criteria','Result'];
+        var coiUL = document.getElementById('test-1-ul');
+        for(const child in coiUL.children){
+            var newTH = document.createElement('thead');
+            
+            var newTB = document.createElement('tbody');
         }
     }
 
@@ -402,27 +511,13 @@
     function toggleMode(){
         console.log("toggleMode");
         var currentMode = document.getElementById('current-mode').innerText;
-        console.log(currentMode);
-        switch(currentMode){
-            case 'Plan':
-                document.getElementById('current-mode').innerText = 'Progress';
-                break;
-            case 'Progress':
-                document.getElementById('current-mode').innerText = 'Interim';
-                break;
-            case 'Interim':
-            document.getElementById('current-mode').innerText = 'Final';
-            break;
-            case 'Final':
-            document.getElementById('current-mode').innerText = 'All Fields';
-            break;
-            case 'All Fields':
-            document.getElementById('current-mode').innerText = 'Plan';
-            break;
-            case 'default':
-            document.getElementById('current-mode').innerText = 'Progress';
-            break;
+        var currentIndex = MODES.findIndex(element => element == currentMode);
+        currentIndex++;
+        if(currentIndex >= MODES.length){
+            currentIndex = 0;
         }
+        currentMode = MODES[currentIndex];
+        document.getElementById('current-mode').innerText = currentMode;
         refreshformat(document.getElementById('test-1-ul'),1,currentMode);
     }
 
