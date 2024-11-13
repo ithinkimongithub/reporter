@@ -1,0 +1,82 @@
+<li id="coi-1-li">
+    <a id="coi-1-title">COI-1: </a><input type="text" size="100" id="coi-1-text">
+    <button type="button" id="coi-1-insert" onclick="clickbutton(event.target.id)">I</button>
+    <button type="button" id="coi-1-remove" onclick="clickbutton(event.target.id)" disabled>-</button>
+    <button type="button" id="coi-1-append" onclick="clickbutton(event.target.id)">+</button>
+    <button type="button" id="coi-1-addchild" onclick="clickbutton(event.target.id)">+&#8595</button>
+    <button type="button" id="coi-1-lock" onclick="clickbutton(event.target.id)">Lock</button>
+    <button type="button" id="coi-1-show" onclick="clickbutton(event.target.id)">Show/Hide Children</button><br>
+    <a>Result: </a>
+        <select name="result" id="coi-1-result">
+            <option value="None"></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Unr">Unresolved</option>
+            <option value="Exc">Yes, With Exception</option>
+            <option value="Excs">Yes, With Exceptions</option>
+        </select><br>
+        <a>Discussion:</a><br><textarea cols = "100" rows = "2" id="coi-1-discussion"></textarea><br>
+    <ul id="coi-1-ul">
+        <li id="mose-1-1-li">
+            <a id="mose-1-1-title">MOE 1-1: </a><input type="text" size="100" id="mose-1-1-text">
+            <div>
+            <button type="button" id="mose-1-1-swap" onclick="clickbutton(event.target.id)">E/S</button>
+            <button type="button" id="mose-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
+            <button type="button" id="mose-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
+            <button type="button" id="mose-1-1-append" onclick="clickbutton(event.target.id)">+</button>
+            <button type="button" id="mose-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button>
+            </div>
+            <br>
+            <a>Data Collection Criteria: </a><input type="text" size="100" id="mose-1-1-data_collection">
+            <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mose-1-1-check" value="1" id="mose-1-1-data_achieved"><br>
+            <a>Evaluation Criteria: </a><input type="text" size="100" id="mose-1-1-eval_criteria"><br>
+            <a>Result: </a>
+            <select name="result" id="mose-1-1-result_selection">
+                <option value="None"></option>
+                <option value="Sat">Satisfactory</option>
+                <option value="SatE">Satisfactory (Excellent)</option>
+                <option value="SatG">Satisfactory (Good)</option>
+                <option value="SatF">Satisfactory (Fair)</option>
+                <option value="Marg">Marginal (Borderline)</option>
+                <option value="Unsat">Unsatisfactory</option>
+                <option value="UnsatP">Unsatisfactory (Poor)</option>
+                <option value="Unusable">Unsatisfactory (Unusable)</option>
+                <option value="Unsafe">Unsatisfactory (Unsafe)</option>
+                <option value="Report">Report Only</option>
+                <option value="Unre">Unresolved</option>
+                <option value="Insuf">Unresolved (Insufficient Data)</option>
+                <option value="Incon">Unresolved (Inconclusive)</option>
+                <option value="NotTested">Unresolved (Not Tested)</option>
+            </select><input type="text" size="100" id="mose-1-1-result_text"><br>
+            <a>Discussion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-discussion"></textarea><br>
+            <a>Conclusion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-conclusion"></textarea><br>
+            <a>Recommendation:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-recommendation"></textarea><br>
+            <ul id="mose-1-1-ul">
+                <li id="mop-1-1-1-li">
+                    <a id="mop-1-1-1-title">MOP 1-1-1: </a>
+                    <input type="text" size="100" id="mop-1-1-1-text">
+                    <button type="button" id="mop-1-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
+                    <button type="button" id="mop-1-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
+                    <button type="button" id="mop-1-1-1-append" onclick="clickbutton(event.target.id)">+</button>
+                    <button type="button" id="mop-1-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button><br>
+                    <a>Data Collection Criteria: </a><input type="text" size="100" id="mop-1-1-1-data_collection">
+                    <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mop-1-1-1-check" value="1" id="mop-1-1-1-data_achieved"><br>
+                    <a>Evaluation Criteria: </a><input type="text" size="100" id="mop-1-1-1-eval_criteria"><br>
+                    <a>Result: </a>
+                    <select name="result" id="mop-1-1-1-result_selection">
+                        <option value=""></option>
+                        <option value="Met">Met Criteria</option>
+                        <option value="Did Not Meet Criteria">Did Not Meet Criteria</option>
+                        <option value="Report Only">Report Only</option>
+                        <option value="Insufficient Data">Insufficient Data</option>
+                        <option value="Inconclusive">Inconclusive</option>
+                        <option value="Not Tested">Not Tested</option>
+                    </select><input type="text" size="100" id="mop-1-1-1-result_text"><br>
+                    <a>Discussion:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-discussion"></textarea><br>
+                    <a>Conclusion:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-conclusion"></textarea><br>
+                    <a>Recommendation:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-recommendation"></textarea><br>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>

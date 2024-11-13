@@ -19,87 +19,9 @@
 </style>
 <body>
     <h1>title</h1>
-    <button type="button" id="coi-1-append" onclick="toggleMode()">Toggle Plan/Progress/Interim/Final Mode</button><a id="current-mode">Interim</a>
-    <ul id="thelist">
-        <li id="coi-1-li">
-            <a id="coi-1-title">COI-1: </a><input type="text" size="100" id="coi-1-text">
-            <button type="button" id="coi-1-insert" onclick="clickbutton(event.target.id)">I</button>
-            <button type="button" id="coi-1-remove" onclick="clickbutton(event.target.id)" disabled>-</button>
-            <button type="button" id="coi-1-append" onclick="clickbutton(event.target.id)">+</button>
-            <button type="button" id="coi-1-addchild" onclick="clickbutton(event.target.id)">+&#8595</button>
-            <button type="button" id="coi-1-lock" onclick="clickbutton(event.target.id)">Lock</button>
-            <button type="button" id="coi-1-show" onclick="clickbutton(event.target.id)">Show/Hide Children</button><br>
-            <a>Result: </a>
-                <select name="result" id="coi-1-result">
-                    <option value="None"></option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                    <option value="Unr">Unresolved</option>
-                    <option value="Exc">Yes, With Exception</option>
-                    <option value="Excs">Yes, With Exceptions</option>
-                </select><br>
-                <a>Discussion:</a><br><textarea cols = "100" rows = "2" id="coi-1-discussion"></textarea><br>
-            <ul id="coi-1-ul">
-                <li id="mose-1-1-li">
-                    <a id="mose-1-1-title">MOE 1-1: </a><input type="text" size="100" id="mose-1-1-text">
-                    <button type="button" id="mose-1-1-swap" onclick="clickbutton(event.target.id)">E/S</button>
-                    <button type="button" id="mose-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
-                    <button type="button" id="mose-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
-                    <button type="button" id="mose-1-1-append" onclick="clickbutton(event.target.id)">+</button>
-                    <button type="button" id="mose-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button><br>
-                    <a>Data Collection Criteria: </a><input type="text" size="100" id="mose-1-1-data_collection">
-                    <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mose-1-1-check" value="1" id="mose-1-1-data_achieved"><br>
-                    <a>Evaluation Criteria: </a><input type="text" size="100" id="mose-1-1-eval_criteria"><br>
-                    <a>Result: </a>
-                    <select name="result" id="mose-1-1-result_selection">
-                        <option value="None"></option>
-                        <option value="Sat">Satisfactory</option>
-                        <option value="SatE">Satisfactory (Excellent)</option>
-                        <option value="SatG">Satisfactory (Good)</option>
-                        <option value="SatF">Satisfactory (Fair)</option>
-                        <option value="Marg">Marginal (Borderline)</option>
-                        <option value="Unsat">Unsatisfactory</option>
-                        <option value="UnsatP">Unsatisfactory (Poor)</option>
-                        <option value="Unusable">Unsatisfactory (Unusable)</option>
-                        <option value="Unsafe">Unsatisfactory (Unsafe)</option>
-                        <option value="Report">Report Only</option>
-                        <option value="Unre">Unresolved</option>
-                        <option value="Insuf">Unresolved (Insufficient Data)</option>
-                        <option value="Incon">Unresolved (Inconclusive)</option>
-                        <option value="NotTested">Unresolved (Not Tested)</option>
-                    </select><input type="text" size="100" id="mose-1-1-result_text"><br>
-                    <a>Discussion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-discussion"></textarea><br>
-                    <a>Conclusion:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-conclusion"></textarea><br>
-                    <a>Recommendation:</a><br><textarea cols = "100" rows = "3" id="mose-1-1-recommendation"></textarea><br>
-                    <ul id="mose-1-1-ul">
-                        <li id="mop-1-1-1-li">
-                            <a id="mop-1-1-1-title">MOP 1-1-1: </a>
-                            <input type="text" size="100" id="mop-1-1-1-text">
-                            <button type="button" id="mop-1-1-1-insert" onclick="clickbutton(event.target.id)">I</button>
-                            <button type="button" id="mop-1-1-1-remove" onclick="clickbutton(event.target.id)">-</button>
-                            <button type="button" id="mop-1-1-1-append" onclick="clickbutton(event.target.id)">+</button>
-                            <button type="button" id="mop-1-1-1-lock" onclick="clickbutton(event.target.id)">Lock</button><br>
-                            <a>Data Collection Criteria: </a><input type="text" size="100" id="mop-1-1-1-data_collection">
-                            <a>Data Achieved: </a><input type="checkbox" id="mop-1-1-1-check" name="mop-1-1-1-check" value="1" id="mop-1-1-1-data_achieved"><br>
-                            <a>Evaluation Criteria: </a><input type="text" size="100" id="mop-1-1-1-eval_criteria"><br>
-                            <a>Result: </a>
-                            <select name="result" id="mop-1-1-1-result_selection">
-                                <option value=""></option>
-                                <option value="Met">Met Criteria</option>
-                                <option value="Did Not Meet Criteria">Did Not Meet Criteria</option>
-                                <option value="Report Only">Report Only</option>
-                                <option value="Insufficient Data">Insufficient Data</option>
-                                <option value="Inconclusive">Inconclusive</option>
-                                <option value="Not Tested">Not Tested</option>
-                            </select><input type="text" size="100" id="mop-1-1-1-result_text"><br>
-                            <a>Discussion:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-discussion"></textarea><br>
-                            <a>Conclusion:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-conclusion"></textarea><br>
-                            <a>Recommendation:</a><br><textarea cols = "100" rows = "3" id="mop-1-1-1-recommendation"></textarea><br>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
+    <button type="button" id="button-toggle-mode" onclick="toggleMode()">Toggle Plan/Progress/Interim/Final Mode</button><a id="current-mode">Plan</a><br>
+    <button type="button" id="test-1-addchild" onclick="clickbutton(event.target.id)">Add COI</button>
+    <ul id="test-1-ul">
     </ul>
     <hr>
     <div style="font-size:10px;">
@@ -107,7 +29,120 @@
     <a href="mailto:thomas.kubler@gmail.com">thomas.kubler@gmail.com</a>
 </body>
 <script>
-    
+    //constants.
+    const standard_prefixes = ['test','coi','mose','mop'];
+    const standard_titles   = ['NONE','COI-','MOE ','MOP '];
+    const suitable = 'MOS ';
+    //BUTTONS
+    const button_icons = ['Insert','-'     ,'+'     ,'Add Child','Move\u2193','Move\u2191','Lock'];
+    const button_cmds  = ['insert','remove','append','addchild' ,'movedown',  'moveup',    'lock'];
+    //design data, for all products
+    const MODES = ['Plan','Progress','Interim','Final','All Fields'];
+    const MOPOPTIONS = ["","Met Criteria","Did Not Meet Criteria","Report Only","Insufficient Data","Inconclusive","Not Tested"];
+    const MOSEOPTIONS = ['','Satisfactory','Satisfactory (Excellent)','Satisfactory (Good)',
+        'Satisfactory (Fair)','Marginal(Borderline)','Unsatisfactory','Unsatisfactory (Poor)',
+        'Unsatisfactory (Unsafe)','Report Only','Unresolved','Unresolved (Insufficient Data)',
+        'Unresolved (Inconclusive)','Unresolved (Not Tested)'];
+    const COIOPTIONS = ['','Yes','No','Unresolved','Yes, With Exception','Yes, with Exceptions'];
+    const DESIGNCOI = [
+        //triads/triples of TYPE, CONTENT, and ID suffix, and visibility Booleans.
+        1,1,1,1,'a','COI-','title', //title will get its text specially edited
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        1,1,1,1,'button',button_icons[3],button_cmds[3], //
+        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,'br','','', //line break only for the web editor.
+        0,0,1,1,'a','Result: ','', //blank in third of triad will mean no id is assigned.
+        0,0,1,1,'select','COI','result', //a select for COI results
+        0,1,1,1,'input','text','result_text',
+        0,0,1,1,'br','','', //another ignored triple for a line break;
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        1,1,1,1,'ul','','ul']; //and automatically adds the ul for the sub-tree
+    const DESIGNMOSE = [
+        1,1,1,1,'a','MOE ','title',
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        1,1,1,1,'button',button_icons[3],button_cmds[3], //
+        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,'br','','',
+        0,1,1,1,'a','Data Collection Criteria: ','',
+        0,1,1,1,'input','text','data_collection',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Evaluation Criteria: ','',
+        0,1,1,1,'input','text','eval_criteria',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Result: ','',
+        0,1,1,1,'select','MOSE','result',
+        0,1,1,1,'input','text','result_text',
+        0,1,1,1,'br','','',
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Conclusion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','conclusion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Recommendation: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','recommendation',
+        0,0,1,1,'br','','',
+        1,1,1,1,'ul','','ul'
+    ];
+    const DESIGNMOP = [
+        1,1,1,1,'a','MOP ','title',
+        1,1,1,1,'input','text','text',
+        1,1,1,1,'button',button_icons[0],button_cmds[0], //
+        1,1,1,1,'button',button_icons[1],button_cmds[1], //
+        1,1,1,1,'button',button_icons[2],button_cmds[2], // 
+        //1,1,1,1,'button',button_icons[3],button_cmds[3], //never shown, can't add child
+        1,1,1,1,'button',button_icons[4],button_cmds[4], // 
+        1,1,1,1,'button',button_icons[5],button_cmds[5], //
+        1,1,1,1,'button',button_icons[6],button_cmds[6], //
+        1,1,1,1,'br','','',
+        0,1,1,1,'a','Data Collection Criteria: ','',
+        0,1,1,1,'input','text','data_collection',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Data Achieved: ','',
+        0,1,1,1,'input','checkbox','data_achieved',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Evaluation Criteria: ','',
+        0,1,1,1,'input','text','eval_criteria',
+        0,1,1,1,'br','','',
+        0,1,1,1,'a','Result: ','',
+        0,1,1,1,'select','MOP','result',
+        0,1,1,1,'input','text','result_text',
+        0,1,1,1,'br','','',
+        0,0,1,1,'a','Discussion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','discussion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Conclusion: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','conclusion',
+        0,0,1,1,'br','','',
+        0,0,1,1,'a','Recommendation: ','',
+        0,0,1,1,'br','','',
+        0,0,1,1,'textarea','','recommendation',
+        0,0,1,1,'br','',''
+    ];
+    //variables, 
+
+    //functions
     function new_item(depth, ncoi, nmose = 0, nmop = 0){
         console.log("new_Item, depth, ncoi, nmose, nmop: ",depth, ncoi, nmose, nmop);
         //depth is 1-coi, 2-mose, or 3-mop
@@ -143,19 +178,26 @@
             var tag = design_vector[i+4];
             var content = design_vector[i+5];
             var suffix = design_vector[i+6];
-            if(tag == 'buttons'){
-                var button_icons = ['I','-','+',"+\u2193",'Lock'];
-                var button_cmds  = ['insert','remove','append','addchild','lock'];
+            if(tag == 'button'){
+                let newB = document.createElement('button');
+                newB.innerText = content;
+                newB.id = whatisit+'-'+numbers+'-'+suffix;
+                newB.onclick = () => clickbutton(newB.id);
+                newLI.appendChild(newB);
+                /*
                 for(var b = 0; b < button_cmds.length; b++){
-                    var newB = document.createElement('button');
+                    let newB = document.createElement('button'); //the "let" allows the variable to be forgotten
                     newB.innerText = button_icons[b];
+                    //console.log(newB);
                     newB.id = whatisit+'-'+numbers+'-'+button_cmds[b];
-                    newB.addEventListener('click',function(event){clickbutton(event.target.id);});
+                    //newB.addEventListener('click',function(event){clickbutton(event.target.id);});
                     //console.log(button_cmds[b]);
                     if(!(button_cmds[b] == 'addchild' && depth == 3)){
                         newLI.appendChild(newB);
+                        //console.log(document.getElementById(newB.id));
+                        newB.onclick = () => clickbutton(newB.id);
                     }
-                }
+                }*/
             }
             else if(tag == 'select'){
                 //do special for select
@@ -184,20 +226,84 @@
         console.log("newLI:",newLI,"end new item");
         return newLI;
     }
+    function refreshlist(ULitem, depth=1, inherit_coi=0, inherit_mose=0){
+        var count = 1;
+        for(const child of ULitem.children){
+            var new_name;
+            new_name = (depth>1 ? (inherit_coi.toString()+'-' ):(''))+(depth>2 ? (inherit_mose.toString()+'-' ):(''))+count.toString(); 
+            child.id = standard_prefixes[depth]+'-'+new_name+'-li';
+            for(const subchild of child.children){
+                if(subchild.id.length > 0){
+                    var subidsplit = subchild.id.split('-');
+                    var suffix = subidsplit[subidsplit.length-1]; //last element
+                    subchild.id = standard_prefixes[depth]+'-'+new_name+'-'+suffix;
+                    if(suffix == 'title'){
+                        subchild.textContent = standard_titles[depth]+new_name+':';
+                    }
+                    if(subchild.tagName == 'BUTTON'){
+                        subchild.onclick = () => clickbutton(subchild.id);
+                    }
+                }
+                if(subchild.tagName == 'UL'){
+                    refreshlist(subchild, depth + 1, (depth==1?count:inherit_coi), (depth==2?count:0));
+                }
+            }
+            count++;
+        }
+    }
+    function refreshnumbering(){
+        //use basic rules to renumber and rename all items. recursively hit entire tree
+        var unordered_list  = document.getElementById('test-1-ul');
+        refreshlist(unordered_list);
+    }
+
+    function refreshformat(ULitem, depth, mode){
+        var offset = 0;
+        //['Plan','Progress','Interim','Final'];
+        if(mode == 'Progress') offset = 1;
+        if(mode == 'Interim') offset = 2;
+        if(mode == 'Final') offset = 3;
+        var Design;
+        if(depth == 1) Design = DESIGNCOI;
+        if(depth == 2) Design = DESIGNMOSE;
+        if(depth == 3) Design = DESIGNMOP;
+        for(const ILchild of ULitem.children){
+            var count = 0;
+            for(const child of ILchild.children){
+                let vis = Design[count*7+offset];
+                //console.log(count,vis,child);
+                if(child.tagName == 'UL'){
+                    refreshformat(child,depth+1,mode);
+                }
+                else if(vis > 0 || mode == 'All Fields'){
+                    child.style.display = '';
+                }
+                else{
+                    child.style.display = 'none';
+                }
+                count++;
+            }
+        }
+    }
 
     function clickbutton(targetid){
         console.log("clickbutton(targetid)",targetid);
         //parse out the coi, mose, mop and depth
         var params = targetid.split('-');
-        var parentname;
+        var parentname, prefix;
         var wcoi, wmose, wmop, numbers, parentlist, depth, list_location,newcoi,newmose,newmop;
         var cmd = params[params.length-1];
         list_location = 0;
         wcoi = 0; wmose = 0; wmop = 0;
-        if(params[0] == 'coi'){
+        if(params[0] == 'test'){
+            depth = 0;
+            numbers = '1';
+        }
+        else if(params[0] == 'coi'){
             depth = 1;
             wcoi = parseInt(params[1]);
-            parentlist = document.getElementById("thelist");
+            parentname = 'test-1';
+            parentlist = document.getElementById("test-1-ul");
             numbers = params[1];
             list_location = wcoi-1;
         }
@@ -220,44 +326,7 @@
             parentlist = document.getElementById(parentname+'-ul');
             list_location = wmop-1;
         }
-        var whichtitle = targetid.replace(cmd,'title');
         console.log("parse: wcoi, wmoise, wmop, cmd, listlocation: ",wcoi, wmose, wmop, cmd, list_location);
-
-        function increment_item(listitem, depth, delta){
-            //listitem is live html object, parse out the number name and replace it with a new number name.
-            var oldname, newname;
-            var idvector = listitem.id.split('-'); //li item's numbers
-            //operate on the live collection from the child command to edit the DOM, increment id's and change text
-            switch(depth){
-                case 1:
-                    oldname = idvector[1];
-                    newname = (parseInt(idvector[1])+delta).toString();
-                    break;
-                case 2:
-                    oldname = idvector[1]+'-'+idvector[2];
-                    newname = idvector[1]+'-'+(parseInt(idvector[2])+delta).toString();
-                    break;
-                case 3: 
-                    oldname = idvector[1]+'-'+idvector[2]+'-'+idvector[3];
-                    newname = idvector[1]+'-'+idvector[2]+'-'+(parseInt(idvector[3])+delta).toString();
-                    break;
-                default: oldname = '1'; newname = '1'; break;
-            }
-            listitem.id = listitem.id.replace(oldname, newname);
-            for(const child of listitem.children){
-                //console.log("check: ",child.id);
-                if(child.id.length>0){
-                    if(child.nodeName=="A"){
-                        console.log("child: ",targetid,child.id,child.textContent,oldname, newname);
-                        child.textContent = child.textContent.replace(oldname,newname);
-                        console.log("became:",targetid,child.id,child.textContent);
-                    }
-                    //console.log("childid: ",child.id);
-                    child.id = child.id.replace(oldname,newname);
-                    //console.log(" became: ",child.id);
-                }
-            }
-        }
 
         switch(cmd){
             case 'remove': 
@@ -265,80 +334,77 @@
                 var elementName = params[0]+'-'+numbers+'-li';
                 var element = document.getElementById(elementName);
                 element.parentNode.removeChild(element);
-                for (let i = list_location; i < parentlist.children.length; i++) {
-                    increment_item(parentlist.children[i], depth, -1);
-                }
                 //reference oldlength since after delete, may not be accessible at = 0.
-                if(depth == 1 && oldlength == 2){
-                    document.getElementById('coi-1-remove').disabled = true;  
-                } //can't remove last COI.
-                if(depth > 1 && oldlength == 1){
-                    document.getElementById(parentname+'addchild').disabled = false; 
+                if(oldlength == 1){
+                    document.getElementById(parentname+'-addchild').disabled = false; 
                 }//re-enable the COI or MOP add child button if sublist goes to zero.
             break;
             case 'insert':
-                //from current node, increase all + 1
+                //enable the delete button at coi level
                 if(depth == 1){
                     document.getElementById('coi-1-remove').disabled = false;  
                 }     
                 var newLI = new_item(depth, wcoi, wmose, wmop);
                 parentlist.insertBefore(newLI, parentlist.children[list_location]);
-                for (let i = list_location+1; i < parentlist.children.length; i++){
-                    increment_item(parentlist.children[i], depth, 1);
-                }
             break;
             case 'append': 
-                //first, the new item needs to be incremented per depth
-                switch(depth){
-                    case 1: wcoi++; break;
-                    case 2: wmose++; break;
-                    case 3: wmop++; break;
-                    default: break;
-                }
-                //increment after insert.
-                for (let i = list_location+1; i < parentlist.children.length; i++) {
-                    increment_item(parentlist.children[i], depth, 1);
-                }
-                //now add the item to the list
-                var newLI = new_item(depth, wcoi, wmose, wmop);
-                parentlist.insertBefore(newLI,parentlist.children[list_location+1]); 
                 //enable the delete button (only applies to COI-1 delete);
                 if(depth == 1){
                     firstcoi = document.getElementById('coi-1-remove').disabled = false;  
-                }         
-                console.log("list_location: ",list_location);
-                console.log(parentlist.children);
+                }    
+                //add the item to the list
+                var newLI = new_item(depth, wcoi, wmose, wmop);
+                parentlist.insertBefore(newLI,parentlist.children[list_location+1]); 
             break;
             case 'addchild': 
                 //put a new child in front list of below
+                //only done when the ul is empty, meaning no li are here.
                 //first, inherit the previous coi/mose
-                var whichli = targetid.replace(cmd,'li');
-                var thislistitem = document.getElementById(whichli);
-                var prefix;
                 switch(depth){
+                    case 0: wcoi = 1; wmose = 0; smop = 0; prefix = 'test'; break;
                     case 1: wmose = 1; prefix = 'coi'; break;
                     case 2: wmop = 1; prefix = 'mose'; break; 
                     case 3: alert("broken, cannot be depth 3 add child");
                 }
                 //create the new item
-                theUL = document.getElementById(prefix+'-'+numbers+'-ul');
+                var theUL = document.getElementById(prefix+'-'+numbers+'-ul');
                 var newLI = new_item(depth+1, wcoi, wmose, wmop);
+                console.log(theUL,newLI);
                 theUL.appendChild(newLI);
                 //disable the addchild button
                 var thisbutton = document.getElementById(targetid);
                 thisbutton.disabled = true; //button is disabled once ul is filled
             break;
-            case 'swap': 
+            case 'movedown': 
+                //basic operation at the MOP is to pull out the item and then re-insert +1 or -1 away
+                //only two items get renumbered, the two neighbors.
+                var LIName = params[0]+'-'+numbers+'-li';
+                var element = document.getElementById(LIName);
+                var cloneLI = element.cloneNode(true);
+                element.parentNode.removeChild(element);
+                parentlist.insertBefore(cloneLI, parentlist.children[list_location+1]);
+            break;
+            case 'moveup': 
+                //basic operation at the MOP is to pull out the item and then re-insert +1 or -1 away
+                //only two items get renumbered, the two neighbors.
+                var LIName = params[0]+'-'+numbers+'-li';
+                var element = document.getElementById(LIName);
+                var cloneLI = element.cloneNode(true);
+                element.parentNode.removeChild(element);
+                parentlist.insertBefore(cloneLI, parentlist.children[list_location-1]);
             break;
             case 'lock': 
             break;
             case 'default': 
             break;
         }
+        refreshnumbering();
     }
 
     function toggleMode(){
+        console.log("toggleMode");
         var currentMode = document.getElementById('current-mode').innerText;
+        console.log(currentMode);
         switch(currentMode){
             case 'Plan':
                 document.getElementById('current-mode').innerText = 'Progress';
@@ -350,100 +416,50 @@
             document.getElementById('current-mode').innerText = 'Final';
             break;
             case 'Final':
-            document.getElementById('current-mode').innerText = 'Progress';
+            document.getElementById('current-mode').innerText = 'All Fields';
+            break;
+            case 'All Fields':
+            document.getElementById('current-mode').innerText = 'Plan';
             break;
             case 'default':
             document.getElementById('current-mode').innerText = 'Progress';
             break;
         }
+        refreshformat(document.getElementById('test-1-ul'),1,currentMode);
     }
 
-    //design data:
-    const MOPOPTIONS = ["","Met Criteria","Did Not Meet Criteria","Report Only","Insufficient Data","Inconclusive","Not Tested"];
-    const MOSEOPTIONS = ['','Satisfactory','Satisfactory (Excellent)','Satisfactory (Good)',
-        'Satisfactory (Fair)','Marginal(Borderline)','Unsatisfactory','Unsatisfactory (Poor)',
-        'Unsatisfactory (Unsafe)','Report Only','Unresolved','Unresolved (Insufficient Data)',
-        'Unresolved (Inconclusive)','Unresolved (Not Tested)'];
-    const MODES = ['Plan','Progress','Interim','Final'];
-    const COIOPTIONS = ['','Yes','No','Unresolved','Yes, With Exception','Yes, with Exceptions'];
-    const DESIGNCOI = [
-        //triads/triples of TYPE, CONTENT, and ID suffix, and visibility Booleans.
-        1,1,1,1,'a','COI-','title', //title will get its text specially edited
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'buttons','','', //special buttons are auto-gen by code. Do not go to document.
-        1,1,1,1,'br','','', //line break only for the web editor.
-        0,0,1,1,'a','Result: ','', //blank in third of triad will mean no id is assigned.
-        0,0,1,1,'select','COI','result', //a select for COI results
-        0,1,1,1,'input','text','result_text',
-        0,0,1,1,'br','','', //another ignored triple for a line break;
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        1,1,1,1,'ul','','ul']; //and automatically adds the ul for the sub-tree
-    const DESIGNMOSE = [
-        1,1,1,1,'a','MOE ','title',
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'buttons','','',
-        1,1,1,1,'br','','',
-        0,1,1,1,'a','Data Collection Criteria: ','',
-        0,1,1,1,'input','text','data_collection',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Data Achieved: ','',
-        0,1,1,1,'input','checkbox','data_achieved',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Evaluation Criteria: ','',
-        0,1,1,1,'input','text','eval_criteria',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Result: ','',
-        0,1,1,1,'select','MOSE','result',
-        0,1,1,1,'input','text','result_text',
-        0,1,1,1,'br','','',
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Conclusion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','conclusion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Recommendation: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','recommendation',
-        0,0,1,1,'br','','',
-        1,1,1,1,'ul','','ul'
-    ];
-    const DESIGNMOP = [
-        1,1,1,1,'a','MOP ','title',
-        1,1,1,1,'input','text','text',
-        1,1,1,1,'buttons','','',
-        1,1,1,1,'br','','',
-        0,1,1,1,'a','Data Collection Criteria: ','',
-        0,1,1,1,'input','text','data_collection',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Data Achieved: ','',
-        0,1,1,1,'input','checkbox','data_achieved',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Evaluation Criteria: ','',
-        0,1,1,1,'input','text','eval_criteria',
-        0,1,1,1,'br','','',
-        0,1,1,1,'a','Result: ','',
-        0,1,1,1,'select','MOP','result',
-        0,1,1,1,'input','text','result_text',
-        0,1,1,1,'br','','',
-        0,0,1,1,'a','Discussion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','discussion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Conclusion: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','conclusion',
-        0,0,1,1,'br','','',
-        0,0,1,1,'a','Recommendation: ','',
-        0,0,1,1,'br','','',
-        0,0,1,1,'textarea','','recommendation',
-        0,0,1,1,'br','',''
-    ]
+    //deprecated?
+    function increment_item(listitem, depth, delta){
+        //listitem is live html object, parse out the number name and replace it with a new number name.
+        var oldname, newname;
+        var idvector = listitem.id.split('-'); //li item's numbers
+        //operate on the live collection from the child command to edit the DOM, increment id's and change text
+        switch(depth){
+            case 1:
+                oldname = idvector[1];
+                newname = (parseInt(idvector[1])+delta).toString();
+                break;
+            case 2:
+                oldname = idvector[1]+'-'+idvector[2];
+                newname = idvector[1]+'-'+(parseInt(idvector[2])+delta).toString();
+                break;
+            case 3: 
+                oldname = idvector[1]+'-'+idvector[2]+'-'+idvector[3];
+                newname = idvector[1]+'-'+idvector[2]+'-'+(parseInt(idvector[3])+delta).toString();
+                break;
+            default: oldname = '1'; newname = '1'; break;
+        }
+        listitem.id = listitem.id.replace(oldname, newname);
+        for(const child of listitem.children){
+            if(child.id.length>0){
+                if(child.nodeName=="A"){
+                    child.textContent = child.textContent.replace(oldname,newname);
+                }
+                child.id = child.id.replace(oldname,newname);
+            }
+        }
+    }
+
 </script>
 </html>
 
