@@ -20,6 +20,7 @@
 <body>
     <h1>title</h1>
     <hr>
+    <button type="button" id="button-tables" onclick="refreshtables()">Tables</button><br>
     <button type="button" id="button-toggle-mode" onclick="toggleMode()">Toggle Plan/Progress/Interim/Final Mode</button><a id="current-mode">Plan</a><br>
     <button type="button" id="test-1-addchild" onclick="clickbutton(event.target.id)">Add COI</button>
     <ul id="test-1-ul">
@@ -380,18 +381,113 @@
         //use div-tables
         var tableDIV = document.getElementById('div-tables');
         while(tableDIV.firstChild){
-            tableDIV.removeChild(tableDIV.firstChild());
+            tableDIV.removeChild(tableDIV.firstChild);
         }
         //<ul id="test-1-ul">
         const PLAN_HEADER = ['MOE','Description','Evaluation Criteria'];
         const REPORT_HEADER = ['MOE','Description','Evaluation Criteria','Result'];
         var coiUL = document.getElementById('test-1-ul');
-        for(const child in coiUL.children){
-            var newTH = document.createElement('thead');
+        var coicount = 1;
+        for(const childcoi of coiUL.children){
+            console.log(childcoi);
+            let newTable = document.createElement('table');
+            newTable.setAttribute('width','600px');
+            tableDIV.appendChild(newTable);
             
-            var newTB = document.createElement('tbody');
+            let newTR = document.createElement('tr');
+            newTable.appendChild(newTR);
+
+            let newTH = document.createElement('th');
+            newTH.setAttribute('class','coiheader');
+            newTH.setAttribute('colspan','3');
+            newTH.innerText = document.getElementById('coi-'+coicount+'-text').value;
+            newTR.appendChild(newTH);
+            
+            let secondrowTR = document.createElement('tr');
+            newTable.appendChild(secondrowTR);
+
+            let moeheaderTH = document.createElement('th');
+            moeheaderTH.setAttribute('width','10%');
+            moeheaderTH.setAttribute('class','moeheader');
+            moeheaderTH.innerText = 'MOE';
+            secondrowTR.appendChild(moeheaderTH);
+
+            let descriptionTH = document.createElement('th');
+            descriptionTH.setAttribute('width','70%');
+            descriptionTH.setAttribute('class','secondrow');
+            descriptionTH.setAttribute('rowspan','2');
+            descriptionTH.innerText = 'Description';
+            secondrowTR.appendChild(descriptionTH);
+
+            let evalTH = document.createElement('th');
+            evalTH.setAttribute('width','20%');
+            evalTH.setAttribute('class','secondrow');
+            evalTH.setAttribute('rowspan','2');
+            evalTH.innerText = 'Evaluation Criteria';
+            secondrowTR.appendChild(evalTH);
+            
+            let thirdrowTR = document.createElement('tr');
+            newTable.appendChild(thirdrowTR);
+
+            let mopheaderTH = document.createElement('th');
+            mopheaderTH.setAttribute('class','mopheader');
+            mopheaderTH.innerText = 'MOP';
+            thirdrowTR.appendChild(mopheaderTH);
+
+            let moseul = document.getElementById('coi-'+coicount+'-ul');
+            let mosecount = 1;
+            for(const childmose of moseul.children){
+                console.log(childmose);
+                let moserowTR = document.createElement('tr');
+                newTable.appendChild(moserowTR);
+
+                let moserowTHnumbers = document.createElement('td');
+                moserowTHnumbers.innerText = coicount.toString()+'-'+mosecount.toString();
+                moserowTHnumbers.setAttribute('class','datacell');
+                moserowTR.appendChild(moserowTHnumbers);
+
+                let moserowTHdescription = document.createElement('td');
+                moserowTHdescription.innerText = document.getElementById('mose-'+coicount+'-'+mosecount+'-text').value;
+                moserowTHdescription.setAttribute('class','datacell');
+                moserowTR.appendChild(moserowTHdescription);
+
+                let moserowTHeval = document.createElement('td');
+                moserowTHeval.innerText = document.getElementById('mose-'+coicount+'-'+mosecount+'-eval_criteria').value;
+                moserowTHeval.setAttribute('class','datacell');
+                moserowTR.appendChild(moserowTHeval);
+
+                let mopUL = document.getElementById('mose-'+coicount+'-'+mosecount+'-ul');
+                let mopcount = 1;
+                for(const childmop of mopUL.children){
+                    console.log(childmop);
+                    let moprowTR = document.createElement('tr');
+                    newTable.appendChild(moprowTR);
+
+                    let moprowTHnumbers = document.createElement('td');
+                    moprowTHnumbers.innerText = coicount.toString()+'-'+mosecount.toString()+'-'+mopcount.toString();
+                    moprowTHnumbers.setAttribute('class','mopcell');
+                    moprowTR.appendChild(moprowTHnumbers);
+
+                    let moprowTHdescription = document.createElement('td');
+                    moprowTHdescription.innerText = document.getElementById('mop-'+coicount+'-'+mosecount+'-'+mopcount+'-text').value;
+                    moprowTHdescription.setAttribute('class','datacell');
+                    moprowTR.appendChild(moprowTHdescription);
+
+                    let moprowTHeval = document.createElement('td');
+                    moprowTHeval.innerText = document.getElementById('mop-'+coicount+'-'+mosecount+'-'+mopcount+'-eval_criteria').value;
+                    moprowTHeval.setAttribute('class','datacell');
+                    moprowTR.appendChild(moprowTHeval);
+                    mopcount++;
+                }
+                mosecount++;
+            }
+            coicount++;
+            let brr = document.createElement('br');
+            tableDIV.appendChild(brr);
         }
     }
+
+    
 
     function clickbutton(targetid){
         console.log("clickbutton(targetid)",targetid);
